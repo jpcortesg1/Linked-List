@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+body{
+  transition: all 0.5s ease;
+}
+
+body.night{
+  background: rgb(36, 41, 41);
+}
+
+.title{
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.title h1{
+  font-weight: 300;
+  transition: all 0.5s ease;
+}
+
+.title h1.night{
+  color: #FFF;
+}
+
+.title span{
+  color: #0FF;
+  font-weight: 600;
+}
+
+.title i{
+  position: absolute;
+  top: 0.6rem;
+  right: 10%;
+  font-size: 1.5rem;
+  color: #0FF;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+i.shrink{
+  transform: scale(0);
+}
+
+.title::after{
+  position: absolute;
+  content: '';
+  top: 2.3rem;
+  left: 10%;
+  width: 80%;
+  height: .15rem;
+  background: #0FF;
+  color: #0FF;
+}
+
+.menu{
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  z-index: 3;
+}
+
+.menu.deploy{
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  padding: 1rem;
+  background: rgba(0, 255, 255, 0.541);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.menu i{
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.menu.night i{
+  color: #FFF;
+}
+
+.menu.deploy i{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.menu form{
+  height: 75%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: all 0.5s ease;
+}
+
+.menu.deploy form{
+  display: flex;
+}
+
+.menu button{
+  width: 5rem;
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 5px;
+  color: #FFF;
+  background: rgb(36, 41, 41);
+  border: 1px solid #FFF;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.menu button:hover{
+  transform: scale(1.1);
+}
+
+.menu input{
+  text-align: center;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid rgb(36, 41, 41);
+}
+
+.menu.night input{
+  color: #FFF;
+}
+
+.menu input::placeholder{
+  text-align: center;
+}
+
+.menu.night input::placeholder{
+  color: #FFF;
+}
+
+.alert{
+  position: relative;
+  width: 50%;
+  height: 2rem;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-2rem);
+  pointer-events: none;
+  margin-left: 25%;
+  border-radius: 2rem;
+  transition: all 0.5s ease;
+}
+
+.alert.down{
+  transform: translateY(0);
+}
+
+.alert.danger{
+  background: rgb(255, 0, 0);
+  color: #FFF;
+}
+
+.alert.success{
+  background: rgb(0, 155, 39);
+  color: #FFF;
+}
+
+.list{
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list .node.pre{
+  max-width: 0 !important;
+  overflow: hidden !important;
+  transform: scale(0) !important;
+  margin: 0 !important;
+  transition: all 0.5s ease;
+}
+
+.list .node{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  background: #0FF;
+  border: 1px solid rgb(36, 41, 41);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.node.select{
+  transform: scale(1.1);
+}
+
+.node.set{
+  transform: translateY(-2rem) scale(1.15);
+}
+
+.node.remove{
+  transform: scale(0);
+}
+
+.list.night .node{
+  border: 1px solid #FFF;
+}
+
+.list .node:hover{
+  transform: scale(1.1);
+}
+
+.list .arrow.pre{
+  max-width: 0 !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  transform: scale(0) !important;
+  transform: translateY(-5rem) !important;
+}
+
+.list .pre.arrow::before{
+  max-width: 0 !important;
+  overflow: hidden !important;
+  border: none !important;
+  display: none !important;
+  transform: scale(0) !important;
+}
+
+.list .arrow{
+  position: relative;
+  width: 30px;
+  height: 5px;
+  margin-top: calc(22.5px + 1rem);
+  background: rgb(36, 41, 41);
+  overflow: visible;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+}
+
+.arrow.select{
+  transform: rotate(-10deg) scale(0.9);
+}
+
+.arrow.remove{
+  transform: translateY(2rem) scale(0.05);
+}
+
+.list.night .arrow{
+  background: #FFF;
+}
+
+.list.night .arrow::before{
+  border-left-color: #FFF;
+}
+  
+.list .arrow::before{
+  position: absolute;
+  content: '';
+  top: -4px;
+  left: 24px;
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid rgb(36, 41, 41);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent; 
+  transition: all 0.5s ease;
+}
+
+.list .arrow:hover{
+  transform: rotate(-10deg);
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animate Linked List</title>
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body id="body">
+
+  <!-- Title and icon of change of theme -->
+  <header class="title">
+    <h1 id="title">Animate <span>Linked</span> List</h1>
+    <i class="fas fa-cloud-moon" id="btnChangeTheme"></i>
+  </header>
+
+  <!-- Menu to manage the list and icon to display the menu -->
+  <div class="menu deploy" id="menu"> 
+    <i class="fas fa-times" id="burger"></i>
+
+    <form class="add">
+      <button id="addBtn">Add</button>
+      <input class="add-input" name="add" type="text" placeholder="data" autocomplete="off" id="addInput">
+    </form>
+
+    <form class="insert">
+      <button id="insertBtn">Insert</button>
+      <input id="indexInput" type="text" placeholder="index" class="index" autocomplete="off">
+      <input id="dataInput" type="text" placeholder="data" class="data" autocomplete="off">
+    </form>
+
+    <form class="set">
+      <button id="setBtn">Set</button>
+      <input id="setIndex" type="text" placeholder="index" autocomplete="off">
+      <input id="setData" type="text" placeholder="data" autocomplete="off">
+    </form>
+
+    <form class="remove">
+      <button id="btnRemove">Remove</button>
+      <input id="removeInput" type="text" placeholder="index" autocomplete="off">
+    </form>
+  </div>
+
+  <!-- For show alert -->
+  <div class="alert" id="alert"></div>
+
+  <!-- List -->
+  <div class="list" id="list">
+
+  </div>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>
